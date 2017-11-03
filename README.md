@@ -1,4 +1,4 @@
-# Project Title
+# REC Frontend Starter
 
 Frontend boilerplate using AngularJS, Webpack and Electron. Support for ES6 through Babel.
 
