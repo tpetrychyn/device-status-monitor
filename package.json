@@ -26,8 +26,12 @@
     "angular": "^1.6.6",
     "angular-electron": "^0.2.1",
     "angular-ui-router": "^0.4.3",
+<<<<<<< HEAD
     "electron": "^1.7.9",
     "g": "^2.0.1",
     "webpack-merge": "^4.1.1"
+=======
+    "electron": "^1.7.9"
+>>>>>>> ed58e92733cb424750cfa68615ac5e285d0296d0
   }
 }
