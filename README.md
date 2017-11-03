@@ -34,9 +34,9 @@ Building the web bundle with Webpack for deployment
 main.js ~ Holds setup code for Electron
 webpack.config.js ~ Webpack configuration
 /public
-index.html ~ Skeleton for page, loads and initializes Angular
-app.js ~ Sets up Angular, loads all the controllers, services, component JS files
-routes.js ~ Defines the paths for the pages
+--index.html ~ Skeleton for page, loads and initializes Angular
+--app.js ~ Sets up Angular, loads all the controllers, services, component JS files
+--routes.js ~ Defines the paths for the pages
 --/assets ~ For image and css files
 --/components ~ For directives, pieces to go in a page, like navbar
 --/pages
