@@ -80,6 +80,8 @@ npm run electron
 
 * **Taylor Petrychyn** - *Creator* - [tpetrychyn](https://github.com/tpetrychyn)
 
+* **Paul Hewitt** - *Contributor* - [paulhewitt](https://github.com/paulhewitt)
+
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
