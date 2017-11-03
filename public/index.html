@@ -12,7 +12,7 @@
         <ui-view></ui-view>
     </body>
     <tail>
-        <!-- Insert this line above script imports  -->
+        <!-- This fixes the window binding in Electron  -->
         <script>
             if (typeof module === 'object') { window.module = module; module = undefined; }
         </script>
@@ -24,7 +24,7 @@
             crossorigin="anonymous"></script>
         <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe"
             crossorigin="anonymous"></script>
-        <!-- Insert this line after script imports -->
+        <!-- This is also needed to fix the window binding in Electron -->
         <script>
             if (window.module) module = window.module;
         </script>
