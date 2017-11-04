@@ -10,8 +10,11 @@ if (process.env.NODE_ENV == 'electron')
 
 var module = angular.module('rec-starter', plugins);
 
+//Alphabetize these
+
 require('./components/navbar/navbar.controller.js')(module);
 
-require('./pages/home.controller.js')(module);
+require('./pages/home/home.controller.js')(module);
+require('./pages/profile/profile.controller.js')(module);
 
 require('./routes.js')(module);

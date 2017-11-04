@@ -5,12 +5,9 @@ module.exports = {
     'app': path.join(__dirname, '/public/app.js')
   },
   output: {
-    filename: '[name]-bundle.js',
-    path: path.join(__dirname, '/public'),
-    devtoolLineToLine: true,
-    pathinfo: true,
-    sourceMapFilename: '[name].js.map',
-    publicPath: path.join(__dirname, '/public')
+    path: path.resolve(__dirname, './public/dist'),
+    filename: '[name].bundle.js',
+    publicPath: "dist/"
   },
   module: {
     loaders: [{
@@ -58,9 +55,20 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    publicPath: '/',
     contentBase: path.join(__dirname, '/public'),
-    compress: true
+    compress: true,
+    hot: true,
+    inline: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000/',
+        secure: false,
+      },
+      '/auth': {
+        target: 'http://localhost:8000/',
+        secure: false,
+      }
+    }
   },
   devtool: 'eval'
 }

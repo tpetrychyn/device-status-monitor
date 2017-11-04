@@ -9,7 +9,9 @@
     </head>
     <body>
         <nav-bar></nav-bar>
-        <ui-view></ui-view>
+        <div class="container-fluid">
+            <ui-view></ui-view>
+        </div>
     </body>
     <tail>
         <!-- This fixes the window binding in Electron  -->
@@ -28,6 +30,6 @@
         <script>
             if (window.module) module = window.module;
         </script>
-        <script src="app-bundle.js"></script>
+        <script src="/dist/app.bundle.js"></script>
     </tail>
 </html>

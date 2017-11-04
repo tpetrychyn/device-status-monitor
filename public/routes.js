@@ -5,22 +5,23 @@ module.exports = function (app) {
 function routes($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/home');
 
-    // Web routes
-    if (process.env.NODE_ENV != 'electron') {
+    // Universal routes
     $stateProvider
         .state('home', {
-            template: require('./pages/home.view.html'),
+            template: require('./pages/home/home.view.html'),
             controller: 'HomeController',
             url: '/home'
         })
+        .state('profile', {
+            template: require('./pages/profile/profile.view.html'),
+            controller: 'ProfileController',
+            url: '/profile'
+        });
+
+    // Web routes
+    if (process.env.NODE_ENV != 'electron') {
     }
     //electron routes
     if (process.env.NODE_ENV == 'electron') {
-        $stateProvider
-            .state('home', {
-                template: require('./pages/home.view.html'),
-                controller: 'HomeElectronController',
-                url: '/home'
-            })
     }
 };

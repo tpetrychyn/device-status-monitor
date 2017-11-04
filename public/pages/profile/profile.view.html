@@ -1,0 +1,20 @@
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{profile.firstName}} {{profile.lastName}}</h4>
+        <p class="card-text">{{ profile.facebook_token }}</p>
+        <a href="#" class="btn btn-primary">{{ profile.facebook_id }}</a>
+    </div>
+</div>
