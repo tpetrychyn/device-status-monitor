@@ -70,6 +70,10 @@ npm run build:electron
 npm run electron
 ```
 
+## Note
+
+Currently connects to the backend through a webpack-dev-server proxy which routes any requests to `/auth` or `/api` to `localhost:8000`. For deployment this will need to be changed.
+
 ## Built With
 
 * [AngularJS](https://angularjs.org) - Frontend web UI framework
