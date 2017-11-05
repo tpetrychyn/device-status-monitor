@@ -1,13 +1,19 @@
 module.exports = function(app) {
-    app.controller('deviceController', deviceController);
+    app.controller('DeviceController', DeviceController);
     app.directive('device', device);
 }
 
 function device() {
     return {
         template: require('./device.view.html'),
-        controller: deviceController
+        controller: DeviceController
     }
+}
+
+function DeviceController($scope, $state, $rootScope) {
+    $scope.page = $state.current.name;
+    $scope.environment = process.env.NODE_ENV;
+    $scope.profile = $rootScope.profile;
 }
 
 function getDevice($scope, remote, $http) 
