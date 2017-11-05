@@ -18,12 +18,14 @@ function DeviceController($scope, $state, $rootScope, $http) {
 
     $scope.getDevice = function() {
         $http.get('/api/devices/:id').then(function (data) {
-            $scope.device = data.device;
+            $scope.device = data.device;            
         });
     }
     $scope.getDevices = function() {
         $http.get('/api/devices').then(function (data) {
-            $scope.device = data.device;
+            $scope.devices = data.data.data;
+            console.log("Getting data");
+            console.log(data.data.data);
         });
     
         angular.forEach($scope.device, function(value, key){
