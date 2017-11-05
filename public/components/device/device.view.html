@@ -22,6 +22,7 @@
                     <tbody>
                         
                         <tr ng-repeat="device in devices">
+                            <a href="#/device/:id">
                             <td>{{device.deviceId}}</td>
                             <td>{{device.name}}</td>
                             <td>{{device.status}}</td>
@@ -30,6 +31,7 @@
                             <td>{{device.location.longitude}}</td>
                             <td>{{device.createdAt}}</td>
                             <td>{{device.updatedAt}}</td>
+                        </a>
                         </tr>
                     </tbody>
                 </table>

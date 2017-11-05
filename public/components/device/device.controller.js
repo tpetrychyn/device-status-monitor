@@ -41,6 +41,10 @@ function DeviceController($scope, $state, $rootScope, $http) {
         });
     }
 
+    // $scope.navigateToDevice = function() {
+
+
+    // }
     $scope.getDevices();
 }
 
