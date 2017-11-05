@@ -13,7 +13,8 @@
                             <th scope="col">Name</th>
                             <th scope="col">Status</th>
                             <th scope="col">Location Type</th>
-                            <th scope="col">Location</th>
+                            <th scope="col">Longitude</th>
+                            <th scope="col">Latitude</th>
                             <th scope="col">Created At</th>
                             <th scope="col">Updated At</th>
                         </tr>
@@ -25,7 +26,8 @@
                             <td>{{device.name}}</td>
                             <td>{{device.status}}</td>
                             <td>{{device.locationType}}</td>
-                            <td>{{device.location.latitude}}, {{device.location.longitude}}</td>
+                            <td>{{device.location.latitude}}</td>   
+                            <td>{{device.location.longitude}}</td>
                             <td>{{device.createdAt}}</td>
                             <td>{{device.updatedAt}}</td>
                         </tr>
