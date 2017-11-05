@@ -16,13 +16,7 @@ function routes($urlRouterProvider, $stateProvider) {
             template: require('./pages/profile/profile.view.html'),
             controller: 'ProfileController',
             url: '/profile'
-        })
-        .state('device', {
-            template: require('./components/device/device.view.html'),
-            controller: 'DeviceController',
-            url: '/device'
-        })
-        ;
+        });
 
     // Web routes
     if (process.env.NODE_ENV != 'electron') {
