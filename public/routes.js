@@ -27,10 +27,10 @@ function routes($urlRouterProvider, $stateProvider) {
             controller: 'DeviceCreateController',
             url: '/device-create'
         })
-        .state('deviceView', {
+        .state('device-view/:id', {
             template: require('./components/device/device-view/device-view.view.html'),
             controller: 'DeviceViewController',
-            url: '/device/view'
+            url: '/device/:id'
         })            
         ;
 
