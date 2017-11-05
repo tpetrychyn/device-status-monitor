@@ -14,33 +14,33 @@ function DeviceController($scope, $state, $rootScope, $http) {
     $scope.page = $state.current.name;
     $scope.environment = process.env.NODE_ENV;
     $scope.profile = $rootScope.profile;
+    $scope.displayInfo = false;
 
-    $scope.getDevices = function() {
+    $scope.getDevice = function() {
         $http.get('/api/devices/:id').then(function (data) {
             $scope.device = data.device;
         });
     }
+    $scope.getDevices = function() {
+        $http.get('/api/devices').then(function (data) {
+            $scope.device = data.device;
+        });
+    
+        angular.forEach($scope.device, function(value, key){
+            console.log(value, key);
+         });
+    }
+    $scope.postDevice = function() {
+        $http.post('/api/devices', data).success(function (data, status, headers) {
+            $scope.devices = data;
+        })
+        .error(function (data, status, headers) {
+            $scope.ResponseDetails = "Data: " + data + "Status: " + status + "Headers: " + headers;
+        });
+    }
 
-    $scope.getDevices();    
+    $scope.getDevices();  
+
 }
 
-function getAllDevices($scope, remote, $http) 
-{
-    $http.get('/api/devices').then(function (data) {
-        $scope.device = data.device;
-    });
 
-    angular.forEach($scope.device, function(value, key){
-        console.log(value, key);
-     });
-}
-
-function postDevice($scope, remote, $http) 
-{
-    $http.post('/api/devices', data).success(function (data, status, headers) {
-        $scope.devices = data;
-    })
-    .error(function (data, status, headers) {
-        $scope.ResponseDetails = "Data: " + data + "Status: " + status + "Headers: " + headers;
-    });
-}

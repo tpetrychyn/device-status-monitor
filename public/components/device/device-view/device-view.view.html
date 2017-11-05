@@ -2,58 +2,87 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-header">
-                <h1>DEVICE VIEW</h1>
+                <h1>DEVICE ID: {{ device.deviceId }}</h1>
             </div>
             <div class="card-body">
+                <div ng-if="displayForm == false">
+                    <ng-template #displayDevice>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label for="name" class="col-form-label">
+                                    <h5>Name:</h5>
+                                </label>
+                                <p> {{ device.name }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label for="name" class="col-form-label">
+                                    <h5>Location Type:</h5>
+                                </label>
+                                <p> {{ device.locationType }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label for="name" class="col-form-label">
+                                    <h5>Location:</h5>
+                                </label>
+                                <p> {{ device.location.longitude }} , {{ device.location.latitude }}</p>
+                            </div>
+                        </div>
+                        <button ng-click="editDevice()" class="btn btn-primary" type="button">
+                            Edit Device</button>
+                    </ng-template>
+                </div>
 
-                <div *ngIf="displayInfo; then displayDevice"></div>
-                <ng-template #displayDevice>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <label for="name" class="col-form-label">
-                                <h5>Name:</h5>
-                            </label>
-                            <p> {{ device.name }}</p>
+                <div ng-if="displayForm == true">
+                    <ng-template #displayDevice>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="name" class="col-form-label">
+                                        <h5>Name:</h5>
+                                    </label>
+                                    <input ng-model="device.name" name="name" class="form-control" type="text" id="name" placeholder="Name">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <label for="name" class="col-form-label">
-                                <h5>Device ID:</h5>
-                            </label>
-                            <p> {{ device.deviceId }}</p>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="locationType" class="col-form-label">
+                                        <h5>Location Type:</h5>
+                                    </label>
+                                    <input ng-model="device.locationType" name="locationType" class="form-control" type="text" id="locationType" placeholder="Location Type">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <label for="name" class="col-form-label">
-                                <h5>Name:</h5>
-                            </label>
-                            <p> {{ device.name }}</p>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="Location" class="col-form-label">
+                                        <h5>Location:</h5>
+                                    </label>
+                                    <div class="row">
+                                    <div class="col-sm-6">
+                                        <input ng-model="device.longitude" name="longitude" class="form-control" type="text" id="longitude" placeholder="50.2341 N">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input ng-model="device.latitude" name="latitude" class="form-control" type="text" id="latitude" placeholder="-102.8311 W">
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <label for="name" class="col-form-label">
-                                <h5>Location Type:</h5>
-                            </label>
-                            <p> {{ device.locationType }}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <label for="name" class="col-form-label">
-                                <h5>Location:</h5>
-                            </label>
-                            <p> {{ device.location.longitude }} , {{ device.location.latitude }}</p>
-                        </div>
-                    </div>
-                </ng-template>
+                        <button ng-click="saveDevice()" class="btn btn-primary" type="button">
+                            Save Device</button>
+                    </ng-template>
+                </div>
 
             </div>
             <div class="card-footer">
-                <button (click)="editDevice()" class="btn btn-primary" type="button">
-                    Edit Device</button>
+
             </div>
         </div>
     </div>
