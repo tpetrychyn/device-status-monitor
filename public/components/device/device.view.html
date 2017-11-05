@@ -5,7 +5,7 @@
                 <strong>Device List</strong>
             </div>
             <div class="card-body">
-                <table class = "table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -17,7 +17,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor = "let device of devices">
+                        <tr *ngFor="let device of devices">
                             <td>{{device.name}}</td>
                             <td>{{device.timestamp}}</td>
                             <td>{{device.status}}</td>
@@ -29,7 +29,7 @@
                 </table>
             </div>
             <div class="card-footer">
-
+                <a class="nav-link" ui-sref="device-create()">Add a device</a>
             </div>
         </div>
     </div>
