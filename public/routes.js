@@ -8,8 +8,8 @@ function routes($urlRouterProvider, $stateProvider) {
     // Universal routes
     $stateProvider
         .state('home', {
-            template: require('./pages/home/home.view.html'),
-            controller: 'HomeController',
+            template: require('./components/device/device.view.html'),
+            controller: 'DeviceController',
             url: '/home'
         })
         .state('profile', {

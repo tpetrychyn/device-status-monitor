@@ -41,8 +41,7 @@ function DeviceController($scope, $state, $rootScope, $http) {
         });
     }
 
-    $scope.getDevices();  
-
+    $scope.getDevices();
 }
 
 
