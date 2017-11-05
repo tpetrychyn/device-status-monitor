@@ -9,6 +9,9 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: "dist/"
   },
+  node: {
+    fs: "empty"
+  },
   module: {
     loaders: [{
         test: /\.js$/,
