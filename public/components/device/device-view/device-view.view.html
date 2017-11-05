@@ -16,6 +16,14 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-sm-12" ng-class="{'text-danger': device.status == 'down'}">
+                                <label for="name" class="col-form-label">
+                                    <h5>Status:</h5>
+                                </label>
+                                <p> {{ device.status }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-sm-12">
                                 <label for="name" class="col-form-label">
                                     <h5>Location Type:</h5>
@@ -28,11 +36,13 @@
                                 <label for="name" class="col-form-label">
                                     <h5>Location:</h5>
                                 </label>
-                                <p> {{ device.location.longitude }} , {{ device.location.latitude }}</p>
+                                <p> {{ device.longitude }} , {{ device.latitude }}</p>
                             </div>
                         </div>
                         <button ng-click="editDevice()" class="btn btn-primary" type="button">
                             Edit Device</button>
+                        <button ng-click="restartDevice()" class="btn btn-primary" type="button">
+                        Restart Device</button>
                     </ng-template>
                 </div>
 
@@ -65,13 +75,14 @@
                                         <h5>Location:</h5>
                                     </label>
                                     <div class="row">
-                                    <div class="col-sm-6">
-                                        <input ng-model="device.longitude" name="longitude" class="form-control" type="text" id="longitude" placeholder="50.2341 N">
+                                        <div class="col-sm-6">
+                                            <input ng-model="device.longitude" name="longitude" class="form-control" type="text" id="longitude" placeholder="50.2341 N">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input ng-model="device.latitude" name="latitude" class="form-control" type="text" id="latitude" placeholder="-102.8311 W">
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input ng-model="device.latitude" name="latitude" class="form-control" type="text" id="latitude" placeholder="-102.8311 W">
-                                    </div>
-                                </div>
+                                    <div id="map"></div>
                                 </div>
                             </div>
                         </div>
