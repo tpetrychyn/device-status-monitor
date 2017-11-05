@@ -22,6 +22,11 @@ function routes($urlRouterProvider, $stateProvider) {
             controller: 'DeviceController',
             url: '/device'
         })
+        .state('deviceView', {
+            template: require('./components/device/device-view/device-view.view.html'),
+            controller: 'DeviceViewController',
+            url: '/device/view'
+        })
         ;
 
     // Web routes
