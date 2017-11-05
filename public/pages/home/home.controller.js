@@ -1,7 +1,9 @@
 var fs;
-if (process.env.NODE_ENV == 'electron') 
+require('./style.css');
+
+if (process.env.NODE_ENV == 'electron')
     fs = window.require('fs');
-    
+
 
 module.exports = function(app) {
     app.controller('HomeController', HomeController);
@@ -17,7 +19,7 @@ function HomeController($scope, $rootScope, $http) {
     });
 }
 
-function HomeElectronController($scope, $rootScope, remote, $http) 
+function HomeElectronController($scope, $rootScope, remote, $http)
 {
     $http.get('/api/users/me').then(function (data) {
         $rootScope.profile = data.data;
