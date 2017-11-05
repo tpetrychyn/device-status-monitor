@@ -13,6 +13,7 @@ var module = angular.module('rec-starter', plugins);
 //Alphabetize these
 
 require('./components/navbar/navbar.controller.js')(module);
+require('./components/device/device.controller.js')(module);
 
 require('./pages/home/home.controller.js')(module);
 require('./pages/profile/profile.controller.js')(module);

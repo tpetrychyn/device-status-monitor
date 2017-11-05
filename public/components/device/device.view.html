@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Device List</strong>
+            </div>
+            <div class="card-body">
+                <table class = "table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Timestamp</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Device ID</th>
+                            <th scope="col">Location Type</th>
+                            <th scope="col">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let device of devices">
+                            <td>{{device.name}}</td>
+                            <td>{{device.timestamp}}</td>
+                            <td>{{device.status}}</td>
+                            <td>{{device.deviceId}}</td>
+                            <td>{{device.locationType}}</td>
+                            <td>{{device.location.latitude}}, {{device.location.longitude}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
