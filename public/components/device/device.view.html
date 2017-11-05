@@ -20,18 +20,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         <tr ng-repeat="device in devices">
-                            <a href="#/device/:id">
+
                             <td>{{device.deviceId}}</td>
                             <td>{{device.name}}</td>
-                            <td>{{device.status}}</td>
+                            <div ng-if="device.status === up">
+                                <td class="success">{{device.status}}</td>
+                            </div>
+                            <div ng-if="device.status === down">
+                                <td class="danger">{{device.status}}</td>
+                            </div>
                             <td>{{device.locationType}}</td>
-                            <td>{{device.location.latitude}}</td>   
+                            <td>{{device.location.latitude}}</td>
                             <td>{{device.location.longitude}}</td>
                             <td>{{device.createdAt}}</td>
                             <td>{{device.updatedAt}}</td>
-                        </a>
+
                         </tr>
                     </tbody>
                 </table>
