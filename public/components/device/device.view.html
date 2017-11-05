@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12">`
         <div class="card">
             <div class="card-header">
                 <strong>Device List</strong>
@@ -20,8 +20,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let device of devices">
-
+                        
+                        <tr ng-repeat="device in devices">
                             <td>{{device.deviceId}}</td>
                             <td>{{device.name}}</td>
                             <td>{{device.status}}</td>

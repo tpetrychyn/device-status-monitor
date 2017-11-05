@@ -1,5 +1,6 @@
 var fs;
 require('./style.css');
+require('../.././components/device/device.controller');
 
 if (process.env.NODE_ENV == 'electron')
     fs = window.require('fs');
