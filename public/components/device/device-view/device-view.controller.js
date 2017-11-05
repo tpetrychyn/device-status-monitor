@@ -14,4 +14,9 @@ function DeviceViewController($scope, $state, $rootScope) {
     $scope.page = $state.current.name;
     $scope.environment = process.env.NODE_ENV;
     $scope.profile = $rootScope.profile;
+
+    $scope.functionName = function() {
+        console.log('eh')
+    }
 }
+

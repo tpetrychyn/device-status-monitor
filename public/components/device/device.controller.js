@@ -10,17 +10,18 @@ function device() {
     }
 }
 
-function DeviceController($scope, $state, $rootScope) {
+function DeviceController($scope, $state, $rootScope, $http) {
     $scope.page = $state.current.name;
     $scope.environment = process.env.NODE_ENV;
     $scope.profile = $rootScope.profile;
-}
 
-function getDevice($scope, remote, $http) 
-{
-    $http.get('/api/devices/:id').then(function (data) {
-        $scope.device = data.device;
-    });
+    $scope.getDevices = function() {
+        $http.get('/api/devices/:id').then(function (data) {
+            $scope.device = data.device;
+        });
+    }
+
+    $scope.getDevices();    
 }
 
 function getAllDevices($scope, remote, $http) 
