@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header">
+                <h1>DEVICE VIEW</h1>
+            </div>
+            <div class="card-body">
+
+                <div *ngIf="displayInfo; then displayDevice"></div>
+                <ng-template #displayDevice>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <label for="name" class="col-form-label">
+                                <h5>Name:</h5>
+                            </label>
+                            <p> {{ device.name }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <label for="name" class="col-form-label">
+                                <h5>Device ID:</h5>
+                            </label>
+                            <p> {{ device.deviceId }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <label for="name" class="col-form-label">
+                                <h5>Name:</h5>
+                            </label>
+                            <p> {{ device.name }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <label for="name" class="col-form-label">
+                                <h5>Location Type:</h5>
+                            </label>
+                            <p> {{ device.locationType }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <label for="name" class="col-form-label">
+                                <h5>Location:</h5>
+                            </label>
+                            <p> {{ device.location.longitude }} , {{ device.location.latitude }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+
+            </div>
+            <div class="card-footer">
+                <button (click)="editDevice()" class="btn btn-primary" type="button">
+                    Edit Device</button>
+            </div>
+        </div>
+    </div>
+</div>
